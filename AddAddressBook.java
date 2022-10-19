@@ -15,6 +15,8 @@ public class AddAddressBook {
 
 		System.out.println("Enter the Last name");
 		String lastName = scanner.nextLine();
+		System.out.println("Enter the Address");
+		String address = scanner.nextLine();
 
 		System.out.println("Enter the City name");
 		String city = scanner.nextLine();
@@ -33,13 +35,28 @@ public class AddAddressBook {
 
 		contact.setFirstName(firstName);
 		contact.setLastName(lastName);
+		contact.setAddress(address);
 		contact.setCity(city);
 		contact.setState(state);
 		contact.setZip(zip);
 		contact.setMobileNumber(mobileNumber);
 		contact.setEmail(email);
 
-		System.out.print(contact);
+	}
+
+	public void display() {
+		System.out.println(contact);
+	}
+
+	public void editContacts() {
+		System.out.println("Enter the First Name of a person to edit:");
+		String name = scanner.nextLine();
+
+		if (name.equalsIgnoreCase(contact.getFirstName())) {
+			addContact();
+		} else {
+			System.out.println("Invalid First Name \n Please enter Valid First name: ");
+		editContacts();}
 
 	}
 
