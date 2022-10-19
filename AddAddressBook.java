@@ -59,5 +59,23 @@ public class AddAddressBook {
 		editContacts();}
 
 	}
+	public void deleteContact() {
+		System.out.println("\nEnter the Firstname of User to Delete:");
+		String name = scanner.nextLine();
 
+		if (name.equalsIgnoreCase(contact.getFirstName())) {
+			System.out.println("Do You Want to Delete Contact ?");
+			System.out.println("Enter Y/N to Delete ");
+			String op = scanner.nextLine();
+
+			if (op.equals("Y") || op.equals("y")) {
+				System.out.println("Enter the Firstname");
+				String firstname = scanner.nextLine();
+				contact = null;
+				System.out.println("Contact is Deleted ");
+			}
+			else
+				System.out.println("Thanx for using address book");
+		}
+	}
 }
